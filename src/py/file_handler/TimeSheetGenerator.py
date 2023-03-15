@@ -1,0 +1,2 @@
+class TimeSheetGenerator:
+    pass

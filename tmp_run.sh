@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+#TODO: switch order of checks, so that a venv is created if it is missing
+#     and a config.ini is created if it is missing (using py installer)
+#
 # check if config file exists and is not empty
 if [ -s "config.ini" ]
 then
