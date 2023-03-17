@@ -1,1 +1,1 @@
-from .file_handler import WorkHandler
+from .file_handler import WorkHandler, TimeSheetGenerator

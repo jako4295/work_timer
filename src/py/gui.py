@@ -1,6 +1,6 @@
 import customtkinter as ctk
 import configparser
-from file_handler import WorkHandler
+from file_handler import WorkHandler, TimeSheetGenerator
 
 
 class GUICONFIG(configparser.ConfigParser):
@@ -68,7 +68,15 @@ class GUI(ctk.CTk):
             self.start_stop_button.configure(text="Start Working")
     
     def click_sheet(self):
-        print("I am not implemented yet lmao")
+        if self.button_state:
+            self.config.wh.stop()
+            self.start_stop_button.configure(text="Start Working")
+            self.button_state = not self.button_state
+        
+        TimeSheetGenerator.create_excel_sheet(
+            self.config.time_log_dir,
+            self.config.program_dir
+        )
 
     def main(self):
         self.mainloop()
