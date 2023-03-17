@@ -7,10 +7,12 @@ Notes:
     - He's not working yet
 
 ToDo:
-    - add desktop entry
-        (https://askubuntu.com/questions/342950/how-do-i-create-a-desktop-entry-to-launch-a-python-script)    
-    - Make installer use home dir as default
-    - get script to create and install venv and requirements
+    - check if python3-tk is installed
+    - implement uninstaller
+    - implement excel creator
+    - implement selector for date cutoff
+    - add instructions to readme
+    - add todo to readme instead
 """
 import os
 import subprocess
