@@ -5,8 +5,8 @@ SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 cd "$SCRIPTPATH"
 
 # read the config file
-TIME_LOG_DIR=$(grep -Po '(?<=TIME_LOG_DIR = ).*' config.ini)
-PROGRAM_DIR=$(grep -Po '(?<=PROGRAM_DIR = ).*' config.ini)
+TIME_LOG_DIR=$(grep -Po '(?<=TIME_LOG_DIR = ).*' $SCRIPTPATH/config/config.ini)
+PROGRAM_DIR=$(grep -Po '(?<=PROGRAM_DIR = ).*' $SCRIPTPATH/config/config.ini)
 TMP_GUI_PATH="/src/py/gui.py"
 GUI_PATH="$PROGRAM_DIR$TMP_GUI_PATH"
 

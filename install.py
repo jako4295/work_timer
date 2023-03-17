@@ -50,7 +50,7 @@ if not os.path.isdir(time_log_dir):
 
 
 # setup config.ini
-with open(program_dir + "/config.ini", "w") as f:
+with open(program_dir + "/config/config.ini", "w") as f:
     f.write("[DIRS]\n")
     f.write("TIME_LOG_DIR = " + time_log_dir + "\n")
     f.write("PROGRAM_DIR = " + program_dir + "\n")

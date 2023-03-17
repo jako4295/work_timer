@@ -11,7 +11,7 @@ class GUICONFIG(configparser.ConfigParser):
 
     def __init__(self):
         super().__init__()
-        self.read("config.ini")
+        self.read("config/config.ini")
         self.time_log_dir = self.get("DIRS", "TIME_LOG_DIR")
         self.program_dir = self.get("DIRS", "PROGRAM_DIR")
 
