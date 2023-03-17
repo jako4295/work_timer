@@ -22,6 +22,7 @@ class GUICONFIG(configparser.ConfigParser):
 
 class GUI(ctk.CTk):
     button_state: bool = False
+    log_started: bool = False
 
     def __init__(self):
         super().__init__()
@@ -32,8 +33,11 @@ class GUI(ctk.CTk):
     
     def create_window(self):
         self.title("Work Timer")
-        self.geometry("740x200")
+        self.geometry("740x500")
         self.resizable(True, True)
+
+        self.grid_columnconfigure(1, weight=1)
+        self.grid_rowconfigure(1, weight=1)
 
         btt_txt = "Start Working" if not self.button_state else "Stop Working"
 
@@ -53,12 +57,24 @@ class GUI(ctk.CTk):
                 height=180,
                 font=("Arial", 46),
             )
-        self.start_stop_button.pack(padx=10, pady=10, side="left")
-        self.create_excel_sheet.pack(padx=10, pady=10, side="right")
+        self.daily_log = ctk.CTkTextbox(
+                self,
+                width=740,
+                height=200,
+                font=("Arial", 34),
+            )
+        
+        self.start_stop_button.grid(row=0, column=0, sticky="nsew")
+        self.create_excel_sheet.grid(row=0, column=1, sticky="nsew")
+        self.daily_log.grid(row=1, column=0, columnspan=2, sticky="nsew")
+
+        self.update_log()
+
     
     def click_ss(self):
         # use button state to call either start or stop
         self.button_state = not self.button_state
+        self.update_log()
 
         if self.button_state:
             self.config.wh.start()
@@ -77,6 +93,10 @@ class GUI(ctk.CTk):
             self.config.time_log_dir,
             self.config.program_dir
         )
+    
+    def update_log(self):
+        self.daily_log.delete("0.0", "end")
+        self.daily_log.insert("0.0", self.config.wh.get_daily_log())
 
     def main(self):
         self.mainloop()

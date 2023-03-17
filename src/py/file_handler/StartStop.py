@@ -72,6 +72,13 @@ class WorkHandler:
                 return True
             else:
                 return False
+    
+    def get_daily_log(self, ) -> str:
+        with open(self.current_file_path, "r") as f:
+            lines = f.readlines()
+        
+        return "".join(lines)
+
 
     def _get_current_file_path(self) -> str:
         now = str(dt.datetime.now())[:16]
