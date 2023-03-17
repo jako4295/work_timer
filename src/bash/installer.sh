@@ -1,9 +1,13 @@
 #!/bin/bash
-# take input from python installer ($1 program_dir, $2 timer_logs_dir)
+# take input from python installer 
+#   ($1 program_dir, $append_to_bash_profile)
 program_dir=$1
-timer_logs_dir=$2
+write_to_file=$2
 
-printf "$program_dir\n"
-printf "$timer_logs_dir\n"
-
-printf "This installer is not yet implemented. See todo in install.py\n"
+if [ $write_to_file = "yes" ]; then
+    # write to bash_profile
+    start_str="alias timer="
+    middle_str="bash $program_dir"
+    end_str="/run.sh"
+    echo "$start_str'$middle_str$end_str'" >> ~/.bash_aliases
+fi
