@@ -136,3 +136,5 @@ flatpak*/
 build*
 build*/
 *venv/
+.flatpak*
+.flatpak*/
