@@ -1,0 +1,35 @@
+# build flatpak with:
+# flatpak-builder --force-clean build/ org.flatpak.Worktimer.yml
+# install with:
+# flatpak-builder --user --install --force-clean build/ org.flatpak.Worktimer.yml
+# run with:
+# flatpak run org.flatpak.Worktimer
+
+app-id: org.flatpak.Worktimer
+runtime: org.freedesktop.Platform
+runtime-version: '22.08'
+sdk: org.freedesktop.Sdk
+command: run_flatpak.sh
+modules:
+  - Jsons/tkinter.json
+  - python3-app-requirements.json
+  - name: worktimer
+    buildsystem: simple
+    build-commands:
+      - install -D run_flatpak.sh /app/bin/run_flatpak.sh
+    sources:
+      - type: file
+        path: run_flatpak.sh
+  - name: source_dir
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/src
+      - cp -r src/* /app/src
+    sources:
+      - type: dir
+        path: .
+sandbox:
+  x11:
+    options: "security-opt=label:disable --device=/dev/dri --env=DISPLAY=$DISPLAY"
+finish-args:
+  - --socket=x11

@@ -133,7 +133,7 @@ build/
 .old
 flatpak*
 flatpak*/
-build*
+build
 build*/
 *venv/
 .flatpak*
