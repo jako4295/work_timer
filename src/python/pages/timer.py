@@ -1,6 +1,6 @@
-import customtkinter as ctk
 from .abstract_page import Abstract_GUI
 from .structures import Page
+import os
 
 
 class Timer(Abstract_GUI):
