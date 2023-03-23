@@ -1,6 +1,6 @@
-import os
-from gui import GUI
+from python import Preferences, About, Timer
 
 
 if __name__ == "__main__":
-    gui = GUI()
+    gui = Timer()
+    gui.mainloop()
