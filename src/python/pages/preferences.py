@@ -9,6 +9,7 @@ class Preferences(Abstract_GUI):
 
     def __init__(self,):
         super().__init__(start_page = self.page)
+        self.fill_page(self.page)
 
     def flush_page(self) -> None:
         pass

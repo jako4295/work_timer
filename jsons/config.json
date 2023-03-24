@@ -1,5 +1,6 @@
 {
     "fileLocations": {
-        "timerLogDir": "/home/all/Work Timers"
+        "timerLogDir": "/home/all/Work Timers",
+        "projectDir": "/home/all/Git/work_timer"
     }
 }
