@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.flatpak/flatpak-builder/ccache/bin/c\+\+
+
+.flatpak/flatpak-builder/ccache/bin/cc
+
+.flatpak/flatpak-builder/ccache/bin/g\+\+
+
+.flatpak/flatpak-builder/ccache/bin/gcc
