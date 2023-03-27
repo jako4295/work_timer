@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class Page(Enum):
-    TIMER = 0
-    PREFERENCES = 1
-    ABOUT = 2
+    MAINPAGE = 0
+    TIMER = 1
+    PREFERENCES = 2
+    ABOUT = 3

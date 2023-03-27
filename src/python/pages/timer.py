@@ -1,10 +1,8 @@
-from .abstract_page import Abstract_GUI
 import customtkinter as ctk
 from .structures import Page
-import os
 
 
-class Timer(Abstract_GUI):
+class TimerFrame(ctk.CTkFrame):
     page = Page.TIMER
     current_page = None
 

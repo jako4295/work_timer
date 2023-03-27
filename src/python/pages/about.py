@@ -1,23 +1,11 @@
 import customtkinter as ctk
-from .abstract_page import Abstract_GUI
-from .structures import Page
 
 
-class About(Abstract_GUI):
-    page = Page.ABOUT
-    current_page = None
+class AboutFrame(ctk.CTkFrame):
+    def __init__(self, *args, header_name: str="AboutFrame", **kwargs):
+        super().__init__(*args, **kwargs)
+        self.header_name = header_name
+        self.header = ctk.CTkLabel(self, text=self.header_name)
+        self.header.grid(row=0, column=0, padx=10, pady=10)
 
-    def __init__(self,):
-        super().__init__(start_page = self.page)
-        self.fill_page(self.page)
-
-    def flush_page(self) -> None:
-        for widget in self.frame.winfo_children():
-            widget.destroy()
-
-    def change_page(self, page: Page) -> None:
-        pass
-
-    def fill_page(self, page: Page) -> None:
-        self.test = ctk.CTkLabel(self, text="About")
-        self.test.pack()
+        self.testing_text = ctk.CTkLabel(self, text="This is a test")

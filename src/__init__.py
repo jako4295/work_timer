@@ -1,1 +1,1 @@
-from .python import Preferences, About, Timer
+from .python import MainWindow, Page

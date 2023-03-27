@@ -1,4 +1,4 @@
-from python import Preferences, About, Timer, ConfigParser
+from python import ConfigParser, MainWindow, Page
 import sys
 
 
@@ -9,5 +9,5 @@ if __name__ == "__main__":
     config_parser.set_env_variables()
     env_variables = config_parser.get_env_variables()
 
-    gui = Timer()
+    gui = MainWindow(start_page=Page.ABOUT)
     gui.mainloop()
