@@ -14,6 +14,7 @@ class ConfigParser:
         As of now only JSON config of level 1 (meaning 1 level of 
         sub dictionary) is supported.
         """
+        print("flatpak config path: ", config_path)
         self.config_path = config_path
     
     def set_env_variables(self):

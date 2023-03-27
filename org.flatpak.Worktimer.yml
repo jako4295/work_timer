@@ -11,7 +11,7 @@ runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 command: run_flatpak.sh
 modules:
-  - Jsons/tkinter.json
+  - jsons/tkinter.json
   - python3-app-requirements.json
   - name: worktimer
     buildsystem: simple
@@ -28,6 +28,15 @@ modules:
     sources:
       - type: dir
         path: .
+  - name: jsons_dir
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/jsons
+      - cp -r jsons/* /app/jsons
+    sources:
+      - type: dir
+        path: .
+    
 sandbox:
   x11:
     options: "security-opt=label:disable --device=/dev/dri --env=DISPLAY=$DISPLAY"
