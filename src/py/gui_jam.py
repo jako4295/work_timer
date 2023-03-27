@@ -64,8 +64,8 @@ class GUI(ctk.CTk):
 
         self.edit_excel_layout = ctk.CTkButton(
             self,
-            text="Edit excel layout",
-            command=self.click_edit_layout,
+            text="Create custom time",
+            command=self.custom_time,
             width=380,
             height=70,
             # font=("Arial", 46),
@@ -90,7 +90,7 @@ class GUI(ctk.CTk):
     def click_sheet(self):
         print("I am not implemented yet lmao")
 
-    def click_edit_layout(self):
+    def custom_time(self):
         def check_date():
             print(f'Date: {time_picked["date"].get_date()}')
             print(f'\nStart Time: {time_picked["start_time"]["hour"].get()}:{time_picked["start_time"]["minute"].get()}')
@@ -98,7 +98,7 @@ class GUI(ctk.CTk):
             print(f'\nPause Time: {time_picked["pause_time"]["hour"].get()}:{time_picked["pause_time"]["minute"].get()}')
 
         today = datetime.date.today()
-        print('click_edit_layout')
+        print('custom_time')
         newWindow = ctk.CTkToplevel(self)
         newWindow.title("Edit excel layout")
         newWindow.geometry("400x240")
